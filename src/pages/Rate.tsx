@@ -31,7 +31,7 @@ const Rate = () => {
       </nav>
 
       {/* Main */}
-      <main className="flex-1 flex items-center justify-center px-6 pt-20 pb-10">
+      <main className="flex-1 flex items-center justify-center px-4 sm:px-6 pt-20 pb-10 safe-area-inset">
         <div className="w-full max-w-lg">
           {/* Progress */}
           <AnimatedSection>
@@ -50,22 +50,21 @@ const Rate = () => {
               <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-3">
                 Rate Your Experience
               </h1>
-              <p className="text-muted-foreground mb-12">
+              <p className="text-muted-foreground mb-8 sm:mb-12">
                 How would you rate our project?
               </p>
 
-              <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="flex items-center justify-center gap-2 sm:gap-3 mb-6">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <button
                     key={star}
                     onMouseEnter={() => setHoveredStar(star)}
                     onMouseLeave={() => setHoveredStar(0)}
                     onClick={() => setRating(star)}
-                    className="group transition-transform duration-200 hover:scale-110 active:scale-95"
+                    className="group transition-transform duration-200 hover:scale-110 active:scale-95 touch-manipulation p-1"
                   >
                     <Star
-                      size={44}
-                      className={`transition-all duration-300 ${
+                      className={`w-10 h-10 sm:w-11 sm:h-11 transition-all duration-300 ${
                         star <= (hoveredStar || rating)
                           ? "fill-primary text-primary"
                           : "fill-none text-border hover:text-muted-foreground"
@@ -75,7 +74,7 @@ const Rate = () => {
                 ))}
               </div>
 
-              <p className={`text-sm font-medium transition-all duration-300 mb-12 h-5 ${
+              <p className={`text-sm font-medium transition-all duration-300 mb-8 sm:mb-12 h-5 ${
                 (hoveredStar || rating) ? "text-primary opacity-100" : "opacity-0"
               }`}>
                 {ratingLabels[hoveredStar || rating]}
@@ -84,7 +83,7 @@ const Rate = () => {
               <button
                 onClick={handleNext}
                 disabled={rating === 0}
-                className={`inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-medium text-sm transition-all duration-300 ${
+                className={`inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-medium text-sm transition-all duration-300 touch-manipulation ${
                   rating > 0
                     ? "bg-primary text-primary-foreground hover:shadow-[var(--shadow-elevated)] hover:scale-[1.02] active:scale-[0.98]"
                     : "bg-muted text-muted-foreground cursor-not-allowed"

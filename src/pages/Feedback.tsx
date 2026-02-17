@@ -59,7 +59,7 @@ const Feedback = () => {
           </div>
         </nav>
 
-        <main className="flex-1 flex items-center justify-center px-6 pt-20 pb-10">
+        <main className="flex-1 flex items-center justify-center px-4 sm:px-6 pt-20 pb-10 safe-area-inset">
           <AnimatedSection>
             <div className="text-center max-w-md mx-auto">
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
@@ -73,7 +73,7 @@ const Feedback = () => {
               </p>
               <button
                 onClick={() => navigate("/")}
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-medium text-sm bg-primary text-primary-foreground hover:shadow-[var(--shadow-elevated)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-medium text-sm bg-primary text-primary-foreground hover:shadow-[var(--shadow-elevated)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 touch-manipulation"
               >
                 Submit Another Review
               </button>
@@ -105,7 +105,7 @@ const Feedback = () => {
       </nav>
 
       {/* Main */}
-      <main className="flex-1 flex items-center justify-center px-6 pt-20 pb-10">
+      <main className="flex-1 flex items-center justify-center px-4 sm:px-6 pt-20 pb-10 safe-area-inset">
         <div className="w-full max-w-lg">
           {/* Progress */}
           <AnimatedSection>
@@ -142,7 +142,7 @@ const Feedback = () => {
               </div>
 
               {/* Custom form */}
-              <div className="rounded-2xl bg-card border border-border p-6 sm:p-8 shadow-[var(--shadow-soft)] text-left">
+              <div className="rounded-2xl bg-card border border-border p-5 sm:p-8 shadow-[var(--shadow-soft)] text-left">
                 <label className="block text-sm font-medium text-foreground mb-2">
                   Your message to the developer
                 </label>
@@ -151,8 +151,8 @@ const Feedback = () => {
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Tell us what you liked, or how we can improve..."
                   maxLength={1000}
-                  rows={5}
-                  className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ring-offset-background resize-none transition-all duration-200"
+                  rows={4}
+                  className="w-full rounded-xl border border-input bg-background px-4 py-3 text-base sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ring-offset-background resize-none transition-all duration-200"
                 />
                 <p className="text-xs text-muted-foreground mt-2 text-right">
                   {message.length} / 1000
@@ -162,7 +162,7 @@ const Feedback = () => {
                   <button
                     onClick={handleSubmit}
                     disabled={submitting}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-medium text-sm bg-primary text-primary-foreground hover:shadow-[var(--shadow-elevated)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-medium text-sm bg-primary text-primary-foreground hover:shadow-[var(--shadow-elevated)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed touch-manipulation"
                   >
                     {submitting ? (
                       <>
